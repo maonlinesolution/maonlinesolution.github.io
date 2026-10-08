@@ -65,6 +65,13 @@
     #modalList li{margin:7px 0}
     .modal-actions{display:flex;gap:10px;flex-wrap:wrap}
     .btn.whatsapp{background:#168b45;color:#fff;border-color:#168b45}
+    .btn.order-btn{background:var(--gold);color:#10251b;border-color:var(--gold);cursor:pointer}
+    .order-form{display:grid;gap:14px;margin-top:18px}
+    .order-form label{font-weight:800;color:var(--green)}
+    .order-form input,.order-form textarea{width:100%;padding:12px 14px;border:1px solid #cfdcd3;border-radius:12px;font:inherit;background:#fbfefb}
+    .order-form input:focus,.order-form textarea:focus{outline:2px solid var(--lime);border-color:var(--green2)}
+    .order-note{font-size:13px;color:var(--muted);background:#f2f8f3;padding:10px 12px;border-radius:10px}
+
     @media(max-width:600px){.modal-box{padding:24px 18px}.modal-actions .btn{width:100%}}
   </style>
 </head>
@@ -148,10 +155,43 @@
         <div class="modal-actions">
           <a class="btn primary" id="modalCall" href="tel:+8801815016541">📞 কল করুন</a>
           <a class="btn whatsapp" id="modalWhatsapp" href="https://wa.me/8801815016541" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <button class="btn order-btn" id="modalOrder" type="button">🛒 অর্ডার করুন</button>
           <a class="btn secondary" id="modalOfficial" href="#" target="_blank" rel="noopener" style="display:none">🌐 সরকারি সাইট</a>
         </div>
       </div>
     </div>
+
+     <div class="modal" id="orderModal" aria-hidden="true">
+       <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+         <button class="modal-close" id="orderClose" aria-label="বন্ধ করুন">×</button>
+         <div class="modal-icon">🛒</div>
+         <h2 id="orderTitle">অর্ডার করুন</h2>
+         <p class="modal-sub">আপনার তথ্য দিন। এরপর WhatsApp-এ অর্ডারের তথ্য পাঠানো হবে।</p>
+
+         <form class="order-form" id="orderForm">
+           <div>
+             <label for="customerName">আপনার নাম</label>
+             <input id="customerName" type="text" placeholder="আপনার নাম লিখুন" required>
+           </div>
+           <div>
+             <label for="customerPhone">মোবাইল নম্বর</label>
+             <input id="customerPhone" type="tel" placeholder="01XXXXXXXXX" required>
+           </div>
+           <div>
+             <label for="orderService">যে সেবাটি নিতে চান</label>
+             <input id="orderService" type="text" readonly>
+           </div>
+           <div>
+             <label for="orderDetails">অতিরিক্ত তথ্য</label>
+             <textarea id="orderDetails" rows="4" placeholder="আপনার প্রয়োজনীয় তথ্য লিখুন"></textarea>
+           </div>
+           <div class="order-note">ℹ️ অর্ডার সাবমিট করলে WhatsApp খুলবে। সেখানে মেসেজটি পাঠিয়ে অর্ডার সম্পন্ন করবেন।</div>
+           <button class="btn primary" type="submit">📲 WhatsApp-এ অর্ডার পাঠান</button>
+         </form>
+       </div>
+     </div>
+
+
 
     <section id="contact">
       <div class="section-title">
@@ -198,6 +238,15 @@
     const list=document.getElementById('modalList');
     const official=document.getElementById('modalOfficial');
     const wa=document.getElementById('modalWhatsapp');
+     const orderModal=document.getElementById('orderModal');
+     const orderClose=document.getElementById('orderClose');
+     const orderBtn=document.getElementById('modalOrder');
+     const orderForm=document.getElementById('orderForm');
+     const orderService=document.getElementById('orderService');
+     let selectedService='';
+
+     const closeOrder=()=>{orderModal.classList.remove('show');orderModal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+
     const close=()=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
     document.querySelectorAll('[data-service]').forEach(btn=>btn.addEventListener('click',()=>{
       const d=serviceData[btn.dataset.service]; if(!d)return;
@@ -208,9 +257,43 @@
       if(d.official){official.href=d.official;official.style.display='inline-flex';}else{official.style.display='none';}
       modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
     }));
+     orderBtn.addEventListener('click',()=>{
+       selectedService=title.textContent;
+       orderService.value=selectedService;
+       close();
+       orderModal.classList.add('show');
+       orderModal.setAttribute('aria-hidden','false');
+       document.body.style.overflow='hidden';
+       document.getElementById('customerName').focus();
+     });
+
+     orderForm.addEventListener('submit',e=>{
+       e.preventDefault();
+       const name=document.getElementById('customerName').value.trim();
+       const phone=document.getElementById('customerPhone').value.trim();
+       const details=document.getElementById('orderDetails').value.trim();
+
+       const message =
+         '🛒 নতুন অর্ডার\n\n' +
+         'সেবা: ' + selectedService + '\n' +
+         'নাম: ' + name + '\n' +
+         'মোবাইল: ' + phone + '\n' +
+         'অতিরিক্ত তথ্য: ' + (details || 'কিছু বলা হয়নি');
+
+       window.open('https://wa.me/8801815016541?text='+encodeURIComponent(message),'_blank');
+     });
+
+     orderClose.addEventListener('click',closeOrder);
+     orderModal.addEventListener('click',e=>{if(e.target===orderModal)closeOrder();});
+
     document.getElementById('modalClose').addEventListener('click',close);
     modal.addEventListener('click',e=>{if(e.target===modal)close();});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('show'))close();});
+    document.addEventListener('keydown',e=>{
+       if(e.key==='Escape'){
+         if(modal.classList.contains('show'))close();
+         if(orderModal.classList.contains('show'))closeOrder();
+       }
+     });
   </script>
 
 </body>

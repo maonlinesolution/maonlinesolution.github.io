@@ -71,14 +71,57 @@
     .order-form input,.order-form textarea{width:100%;padding:12px 14px;border:1px solid #cfdcd3;border-radius:12px;font:inherit;background:#fbfefb}
     .order-form input:focus,.order-form textarea:focus{outline:2px solid var(--lime);border-color:var(--green2)}
     .order-note{font-size:13px;color:var(--muted);background:#f2f8f3;padding:10px 12px;border-radius:10px}
+    .order-review{padding:16px;border:1px solid #b8e3d4;background:#effbf6;border-radius:14px;color:#24594b}
+    .order-review p{font-size:13px;margin:7px 0 12px}.order-review .btn{display:inline-flex}
 
     @media(max-width:600px){.modal-box{padding:24px 18px}.modal-actions .btn{width:100%}}
-  </style>
+
+    /* নতুন রঙিন, আধুনিক ডিজাইন */
+    :root{--green:#263b80;--green2:#6554c0;--lime:#ffbd59;--gold:#ff7b72;--cream:#f6f7ff;--dark:#202744;--muted:#68708a}
+    body{background:linear-gradient(180deg,#f6f7ff 0%,#fff9f4 52%,#f2fbfa 100%);color:var(--dark)}
+    .topbar{background:linear-gradient(90deg,#273b83,#674db2,#168f91)}
+    header{background:rgba(255,255,255,.96);border-bottom:1px solid #e7e8f4}
+    .brand{color:#293d84}.brand small{color:#168f91}
+    .menu a{color:#394365}.menu a:hover{color:#e66c67}
+    .hero{max-width:1240px;margin:26px auto 0}
+    .hero-panel{min-height:390px;overflow:hidden;position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;padding:48px 6%;border-radius:30px;background:linear-gradient(115deg,#25377e 0%,#5c4db0 52%,#138e91 100%);box-shadow:0 22px 55px #343c8b30;color:#fff}
+    .hero-copy{position:relative;z-index:2}.hero-kicker{display:inline-block;padding:7px 14px;border:1px solid #ffffff66;border-radius:30px;background:#ffffff18;font-size:13px;font-weight:800}
+    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.35;margin:17px 0 12px;color:#fff}.hero h1 span{color:#ffd17c}
+    .hero-copy p{max-width:550px;color:#f0efff;font-size:16px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.hero-actions .btn{border-color:#fff}.hero-actions .primary{background:#ffbd59;border-color:#ffbd59;color:#26345f}.hero-actions .secondary{background:#ffffff16;color:#fff}
+    .hero-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:23px;font-size:13px;color:#e8f9f4}
+    .hero-art{height:280px;position:relative;display:flex;align-items:center;justify-content:center}
+    .art-orbit{position:absolute;border:1px solid #ffffff45;border-radius:50%;width:260px;height:260px}.orbit-two{width:210px;height:210px;border-style:dashed}
+    .art-card-main{position:relative;z-index:2;width:230px;padding:28px 18px;text-align:center;border-radius:24px;background:linear-gradient(145deg,#fff,#eaf5ff);color:#293b80;box-shadow:0 18px 45px #15194c55;transform:rotate(-5deg)}
+    .art-symbol{width:76px;height:76px;display:grid;place-items:center;margin:0 auto 12px;border-radius:23px;background:linear-gradient(135deg,#ffbd59,#ff7b72);color:#fff;font-size:43px;font-weight:900}
+    .art-card-main b{display:block;font-size:17px}.art-card-main small{font-size:9px;letter-spacing:1.4px;color:#168f91}
+    .art-chip{position:absolute;z-index:3;padding:11px 16px;border-radius:14px;background:#fff;color:#33417d;font-weight:900;font-size:13px;box-shadow:0 10px 28px #171c4c33}
+    .chip-one{top:28px;right:0;transform:rotate(7deg)}.chip-two{bottom:22px;left:0;transform:rotate(-7deg)}
+    .art-dot{position:absolute;width:16px;height:16px;border-radius:50%;background:#ffd17c}.dot-one{top:30px;left:30px}.dot-two{bottom:35px;right:35px;background:#8be3d4}
+    .cta-row{margin:20px auto 0}.btn{transition:.2s;box-shadow:0 5px 14px #2222220b}.btn:hover{transform:translateY(-2px)}
+    section{padding-top:78px;padding-bottom:78px}.section-title h2{color:#2e438d}.section-title p{color:#727991}
+    .card,.service,.contact-item{border:1px solid #e4e6f2;box-shadow:0 10px 30px #3d478b0d}
+    .card{border-radius:22px}.card h3,.contact-item b{color:#34458e}
+    .service{background:linear-gradient(150deg,#fff,#fbfbff);border-radius:20px;padding:22px 18px;min-height:205px}
+    .service:nth-child(4n+1) .icon{background:#e9edff;color:#4e58bb}.service:nth-child(4n+2) .icon{background:#e4f8f2;color:#168f79}.service:nth-child(4n+3) .icon{background:#fff1e2;color:#e58b35}.service:nth-child(4n) .icon{background:#ffebee;color:#df6b78}
+    .service .icon{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;margin-bottom:15px}
+    .line-icon{width:34px;height:34px;display:block}.modal-icon .line-icon{width:48px;height:48px}
+    .service h3{color:#34458e}.service .click{color:#e16f69}
+    .contact-item{border-radius:18px}.contact-icon{width:46px;height:46px;flex:0 0 46px;border-radius:14px;display:grid;place-items:center;background:#e9edff;color:#4e58bb}
+    .contact-item:nth-child(2) .contact-icon{background:#e4f8f2;color:#168f79}.contact-item:nth-child(3) .contact-icon{background:#fff1e2;color:#e58b35}.contact-item:nth-child(4) .contact-icon{background:#ffebee;color:#df6b78}
+    .contact-item a{color:#168f91}.fb{background:linear-gradient(110deg,#293d86,#6554b7,#168f91)}
+    footer{background:#202d68}footer strong{color:#ffd17c}
+    .modal{background:#20264dcc}.modal-box{border:1px solid #e4e7f7}.modal-close{background:#f0f1ff;color:#394a91}
+    .btn.whatsapp{background:#159b70;border-color:#159b70;color:#fff}.btn.order-btn{background:#ffbd59;border-color:#ffbd59;color:#29345f}
+    .order-form input:focus,.order-form textarea:focus{outline:2px solid #8b83e6;border-color:#5d55b8}
+    @media(max-width:760px){.hero-panel{grid-template-columns:1fr;padding:34px 7%}.hero-art{height:220px}.art-orbit{width:210px;height:210px}.orbit-two{width:170px;height:170px}.art-card-main{width:190px;padding:18px}.art-symbol{width:60px;height:60px;font-size:34px}.chip-one{right:2px}.chip-two{left:0}.hero h1{font-size:30px}}
+    @media(max-width:520px){.hero-panel{border-radius:20px}.hero-art{height:195px}.hero-points{gap:9px}.hero-points span{font-size:11px}.hero-actions .btn{width:auto;flex:1}.cta-row .btn{width:100%}}
+\n  </style>
 </head>
 <body>
   <div class="topbar">
     <span>দ্রুত • নির্ভরযোগ্য • মানসম্মত সেবা</span>
-    <span>📞 <a href="tel:+8801815016541">01815-016541</a> &nbsp; | &nbsp; ✉️ <a href="mailto:jonirn777@gmail.com">jonirn777@gmail.com</a></span>
+    <span>ফোন: <a href="tel:+8801815016541">01815-016541</a> &nbsp; | &nbsp; ইমেইল: <a href="mailto:jonirn777@gmail.com">jonirn777@gmail.com</a></span>
   </div>
 
   <header>
@@ -95,11 +138,28 @@
 
   <main id="home">
     <div class="hero">
-      <img src="business-banner.png" alt="মা অনলাইন সলিউশন এন্ড গ্রাফিক্স ডিজাইন ব্যানার">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <span class="hero-kicker">আপনার ডিজিটাল সেবার বিশ্বস্ত ঠিকানা</span>
+          <h1>আপনার প্রয়োজনীয় <span>অনলাইন সেবা</span><br>এখন এক জায়গায়</h1>
+          <p>অনলাইন আবেদন, ডকুমেন্ট প্রস্তুতি ও গ্রাফিক্স ডিজাইন—সহজভাবে, যত্নসহকারে।</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#services">সেবাসমূহ দেখুন</a>
+            <a class="btn secondary" href="#contact">যোগাযোগ করুন</a>
+          </div>
+          <div class="hero-points"><span>✓ সহজ অর্ডার</span><span>✓ ব্যক্তিগত সহায়তা</span><span>✓ দ্রুত যোগাযোগ</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-card art-card-main"><div class="art-symbol">M</div><b>MA Online Solution</b><small>ONLINE • DIGITAL • DESIGN</small></div>
+          <div class="art-chip chip-one">অনলাইন আবেদন</div><div class="art-chip chip-two">গ্রাফিক্স ডিজাইন</div>
+          <div class="art-dot dot-one"></div><div class="art-dot dot-two"></div>
+        </div>
+      </div>
       <div class="cta-row">
-        <a class="btn primary" href="tel:+8801815016541">📞 এখন কল করুন</a>
-        <a class="btn secondary" href="https://wa.me/8801815016541" target="_blank" rel="noopener">💬 WhatsApp</a>
-        <a class="btn secondary" href="https://web.facebook.com/onlinesebaaa" target="_blank" rel="noopener">📘 Facebook</a>
+        <a class="btn primary" href="tel:+8801815016541">এখন কল করুন</a>
+        <a class="btn whatsapp" href="https://wa.me/8801815016541" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn secondary" href="https://web.facebook.com/onlinesebaaa" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
 
@@ -128,35 +188,35 @@
         <p>যে সেবাটি প্রয়োজন, সেটিতে ক্লিক করে বিস্তারিত কাজের তালিকা দেখুন।</p>
       </div>
       <div class="services">
-        <button class="service" type="button" data-service="nid"><div class="service-link"><div class="icon">🪪</div><h3>NID সেবা</h3><p>নতুন আবেদন, সংশোধন, নবায়ন ও অন্যান্য NID সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="birth"><div class="service-link"><div class="icon">📜</div><h3>জন্ম ও মৃত্যু নিবন্ধন</h3><p>নতুন নিবন্ধন, সংশোধন, পুনঃমুদ্রণ ও যাচাই।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="education"><div class="service-link"><div class="icon">🎓</div><h3>স্কুল/কলেজ/ভর্তি</h3><p>ভর্তি আবেদন, রেজাল্ট ও শিক্ষা সংক্রান্ত অনলাইন কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="pcc"><div class="service-link"><div class="icon">🛡️</div><h3>পুলিশ ক্লিয়ারেন্স</h3><p>পুলিশ ক্লিয়ারেন্সের অনলাইন আবেদন ও সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="jobs"><div class="service-link"><div class="icon">💼</div><h3>সরকারি/বেসরকারি চাকরি</h3><p>চাকরির আবেদন, ফরম পূরণ, প্রবেশপত্র ও ফলাফল।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="tin"><div class="service-link"><div class="icon">🧾</div><h3>TIN সার্টিফিকেট</h3><p>TIN রেজিস্ট্রেশন, সংশোধন ও সার্টিফিকেট সংক্রান্ত কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="passport"><div class="service-link"><div class="icon">🛂</div><h3>পাসপোর্ট সেবা</h3><p>নতুন পাসপোর্ট, রি-ইস্যু, সংশোধন ও আবেদন সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="forms"><div class="service-link"><div class="icon">📄</div><h3>অনলাইন ফর্ম পূরণ</h3><p>সরকারি-বেসরকারি বিভিন্ন অনলাইন ফরম পূরণ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="typing"><div class="service-link"><div class="icon">⌨️</div><h3>টাইপিং ও ফটো এডিটিং</h3><p>বাংলা/ইংরেজি টাইপিং, ছবি এডিটিং ও ডিজিটাল কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="document"><div class="service-link"><div class="icon">📁</div><h3>ছবি/ডকুমেন্ট এক্সট্রাক্ট</h3><p>মোবাইল/ডকুমেন্ট থেকে প্রয়োজনীয় ফাইল ও তথ্য প্রস্তুত।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="photo"><div class="service-link"><div class="icon">📸</div><h3>পাসপোর্ট সাইজ ছবি</h3><p>পাসপোর্ট সাইজ ও প্রয়োজনীয় ফরম্যাটের ছবি তৈরি।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="flexi"><div class="service-link"><div class="icon">📱</div><h3>Flexiload সেবা</h3><p>সকল অপারেটরে ফ্লেক্সিলোড ও মোবাইল রিচার্জ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="excel"><div class="service-link"><div class="icon">📊</div><h3>Excel Works</h3><p>Data Entry, হিসাব, List Making ও অন্যান্য Excel কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
-        <button class="service" type="button" data-service="graphics"><div class="service-link"><div class="icon">🎨</div><h3>গ্রাফিক্স ডিজাইন</h3><p>ব্যানার, পোস্টার, লোগো, ভিজিটিং কার্ডসহ ডিজাইন।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="nid"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="id-card" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>NID সেবা</h3><p>নতুন আবেদন, সংশোধন, নবায়ন ও অন্যান্য NID সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="birth"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="file-text" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>জন্ম ও মৃত্যু নিবন্ধন</h3><p>নতুন নিবন্ধন, সংশোধন, পুনঃমুদ্রণ ও যাচাই।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="education"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="graduation" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>স্কুল/কলেজ/ভর্তি</h3><p>ভর্তি আবেদন, রেজাল্ট ও শিক্ষা সংক্রান্ত অনলাইন কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="pcc"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="shield" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>পুলিশ ক্লিয়ারেন্স</h3><p>পুলিশ ক্লিয়ারেন্সের অনলাইন আবেদন ও সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="jobs"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="briefcase" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>সরকারি/বেসরকারি চাকরি</h3><p>চাকরির আবেদন, ফরম পূরণ, প্রবেশপত্র ও ফলাফল।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="tin"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="receipt" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>TIN সার্টিফিকেট</h3><p>TIN রেজিস্ট্রেশন, সংশোধন ও সার্টিফিকেট সংক্রান্ত কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="passport"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="passport" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>পাসপোর্ট সেবা</h3><p>নতুন পাসপোর্ট, রি-ইস্যু, সংশোধন ও আবেদন সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="forms"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="clipboard" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>অনলাইন ফর্ম পূরণ</h3><p>সরকারি-বেসরকারি বিভিন্ন অনলাইন ফরম পূরণ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="typing"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="keyboard" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>টাইপিং ও ফটো এডিটিং</h3><p>বাংলা/ইংরেজি টাইপিং, ছবি এডিটিং ও ডিজিটাল কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="document"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="folder" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>ছবি/ডকুমেন্ট এক্সট্রাক্ট</h3><p>মোবাইল/ডকুমেন্ট থেকে প্রয়োজনীয় ফাইল ও তথ্য প্রস্তুত।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="photo"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="camera" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>পাসপোর্ট সাইজ ছবি</h3><p>পাসপোর্ট সাইজ ও প্রয়োজনীয় ফরম্যাটের ছবি তৈরি।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="flexi"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="smartphone" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>Flexiload সেবা</h3><p>সকল অপারেটরে ফ্লেক্সিলোড ও মোবাইল রিচার্জ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="excel"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="chart" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>Excel Works</h3><p>Data Entry, হিসাব, List Making ও অন্যান্য Excel কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="graphics"><div class="service-link"><div class="icon"><svg class="line-icon" data-svg="palette" viewBox="0 0 48 48" aria-hidden="true"></svg></div><h3>গ্রাফিক্স ডিজাইন</h3><p>ব্যানার, পোস্টার, লোগো, ভিজিটিং কার্ডসহ ডিজাইন।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
       </div>
     </section>
 
     <div class="modal" id="serviceModal" aria-hidden="true">
       <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <button class="modal-close" id="modalClose" aria-label="বন্ধ করুন">×</button>
-        <div class="modal-icon" id="modalIcon">🪪</div>
+        <div class="modal-icon" id="modalIcon"><svg class="line-icon" data-svg="id-card" viewBox="0 0 48 48" aria-hidden="true"></svg></div>
         <h2 id="modalTitle">সেবার বিস্তারিত</h2>
         <p class="modal-sub" id="modalSub"></p>
         <ul id="modalList"></ul>
         <div class="modal-actions">
-          <a class="btn primary" id="modalCall" href="tel:+8801815016541">📞 কল করুন</a>
-          <a class="btn whatsapp" id="modalWhatsapp" href="https://wa.me/8801815016541" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <button class="btn order-btn" id="modalOrder" type="button">🛒 অর্ডার করুন</button>
-          <a class="btn secondary" id="modalOfficial" href="#" target="_blank" rel="noopener" style="display:none">🌐 সরকারি সাইট</a>
+          <a class="btn primary" id="modalCall" href="tel:+8801815016541">কল করুন</a>
+          <a class="btn whatsapp" id="modalWhatsapp" href="https://wa.me/8801815016541" target="_blank" rel="noopener">WhatsApp</a>
+          <button class="btn order-btn" id="modalOrder" type="button">অর্ডার করুন</button>
+          <a class="btn secondary" id="modalOfficial" href="#" target="_blank" rel="noopener" style="display:none">সরকারি সাইট</a>
         </div>
       </div>
     </div>
@@ -164,9 +224,9 @@
      <div class="modal" id="orderModal" aria-hidden="true">
        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
          <button class="modal-close" id="orderClose" aria-label="বন্ধ করুন">×</button>
-         <div class="modal-icon">🛒</div>
+         <div class="modal-icon"><svg class="line-icon" data-svg="shopping-bag" viewBox="0 0 48 48" aria-hidden="true"></svg></div>
          <h2 id="orderTitle">অর্ডার করুন</h2>
-         <p class="modal-sub">আপনার তথ্য দিন। এরপর WhatsApp-এ অর্ডারের তথ্য পাঠানো হবে।</p>
+         <p class="modal-sub">ফর্মটি পূরণ করে অর্ডারের তথ্য প্রস্তুত করুন। চাইলে এরপর WhatsApp-এ পাঠাতে পারবেন।</p>
 
          <form class="order-form" id="orderForm">
            <div>
@@ -185,8 +245,13 @@
              <label for="orderDetails">অতিরিক্ত তথ্য</label>
              <textarea id="orderDetails" rows="4" placeholder="আপনার প্রয়োজনীয় তথ্য লিখুন"></textarea>
            </div>
-           <div class="order-note">ℹ️ অর্ডার সাবমিট করলে WhatsApp খুলবে। সেখানে মেসেজটি পাঠিয়ে অর্ডার সম্পন্ন করবেন।</div>
-           <button class="btn primary" type="submit">📲 WhatsApp-এ অর্ডার পাঠান</button>
+           <div class="order-note">অর্ডার সাবমিট করলে WhatsApp খুলবে। সেখানে মেসেজটি পাঠিয়ে অর্ডার সম্পন্ন করবেন।</div>
+           <button class="btn primary" type="submit">অর্ডারের তথ্য প্রস্তুত করুন</button>
+           <div id="orderReview" class="order-review" style="display:none" aria-live="polite">
+             <strong>আপনার অর্ডারের তথ্য প্রস্তুত হয়েছে।</strong>
+             <p>অর্ডারটি আমাদের কাছে পাঠাতে নিচের WhatsApp বাটনে চাপ দিন। ওয়েবসাইটে সরাসরি অর্ডার জমা নেওয়ার জন্য সার্ভার/অর্ডার-সিস্টেম সংযোগ প্রয়োজন।</p>
+             <a class="btn whatsapp" id="sendPreparedOrder" href="#" target="_blank" rel="noopener">WhatsApp-এ অর্ডার পাঠান</a>
+           </div>
          </form>
        </div>
      </div>
@@ -199,10 +264,10 @@
         <p>আপনার প্রয়োজনের কথা জানাতে সরাসরি যোগাযোগ করুন।</p>
       </div>
       <div class="contact">
-        <div class="contact-item"><div>📍</div><div><b>ঠিকানা</b><span>বৃন্দাবন কলেজ রোড, হবিগঞ্জ সদর, হবিগঞ্জ, সিলেট, বাংলাদেশ।</span></div></div>
-        <div class="contact-item"><div>📞</div><div><b>মোবাইল</b><a href="tel:+8801815016541">01815-016541</a></div></div>
-        <div class="contact-item"><div>✉️</div><div><b>ইমেইল</b><a href="mailto:jonirn777@gmail.com">jonirn777@gmail.com</a></div></div>
-        <div class="contact-item"><div>📘</div><div><b>Facebook Page</b><a href="https://web.facebook.com/onlinesebaaa" target="_blank" rel="noopener">facebook.com/onlinesebaaa</a></div></div>
+        <div class="contact-item"><div class="contact-icon"><svg class="line-icon" data-svg="map-pin" viewBox="0 0 48 48" aria-hidden="true"></svg></div><div><b>ঠিকানা</b><span>বৃন্দাবন কলেজ রোড, হবিগঞ্জ সদর, হবিগঞ্জ, সিলেট, বাংলাদেশ।</span></div></div>
+        <div class="contact-item"><div class="contact-icon"><svg class="line-icon" data-svg="phone" viewBox="0 0 48 48" aria-hidden="true"></svg></div><div><b>মোবাইল</b><a href="tel:+8801815016541">01815-016541</a></div></div>
+        <div class="contact-item"><div class="contact-icon"><svg class="line-icon" data-svg="mail" viewBox="0 0 48 48" aria-hidden="true"></svg></div><div><b>ইমেইল</b><a href="mailto:jonirn777@gmail.com">jonirn777@gmail.com</a></div></div>
+        <div class="contact-item"><div class="contact-icon"><svg class="line-icon" data-svg="facebook" viewBox="0 0 48 48" aria-hidden="true"></svg></div><div><b>Facebook Page</b><a href="https://web.facebook.com/onlinesebaaa" target="_blank" rel="noopener">facebook.com/onlinesebaaa</a></div></div>
       </div>
       <div class="fb">
         <strong>অনলাইন সেবা নিতে যোগাযোগ করুন</strong>
@@ -215,22 +280,32 @@
     © 2026 <strong>মা অনলাইন সলিউশন এন্ড গ্রাফিক্স ডিজাইন</strong> — সর্বস্বত্ব সংরক্ষিত।
   </footer>
   <script>
+    const iconPaths = {'id-card': '<rect x="6" y="10" width="36" height="28" rx="5"/><circle cx="17" cy="21" r="4"/><path d="M10 32c2-5 12-5 14 0M28 19h9M28 25h9M28 31h6"/>', 'file-text': '<path d="M13 5h15l8 8v30H13z"/><path d="M28 5v9h8M19 23h11M19 29h11M19 35h8"/>', 'graduation': '<path d="m4 17 20-10 20 10-20 10z"/><path d="M12 22v10c7 6 17 6 24 0V22M44 18v13"/>', 'shield': '<path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11z"/><path d="m17 24 5 5 10-11"/>', 'briefcase': '<rect x="5" y="15" width="38" height="27" rx="4"/><path d="M17 15v-5h14v5M5 25h38M20 25v5h8v-5"/>', 'receipt': '<path d="M11 5h26v38l-5-3-5 3-5-3-5 3-6-3z"/><path d="M17 16h14M17 23h14M17 30h9"/>', 'passport': '<rect x="10" y="5" width="28" height="38" rx="4"/><circle cx="24" cy="23" r="8"/><path d="M16 23h16M24 15c4 4 4 12 0 16M24 15c-4 4-4 12 0 16M18 11h12"/>', 'clipboard': '<rect x="10" y="9" width="28" height="34" rx="4"/><path d="M18 9V6h12v3M17 20h14M17 27h14M17 34h9"/>', 'keyboard': '<rect x="4" y="11" width="40" height="26" rx="4"/><path d="M11 19h2m5 0h2m5 0h2m5 0h2m5 0h2M11 25h2m5 0h2m5 0h2m5 0h2m5 0h2M16 31h16"/>', 'folder': '<path d="M5 13a4 4 0 0 1 4-4h11l4 5h15a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/>', 'camera': '<path d="M7 15h8l3-5h12l3 5h8v25H7z"/><circle cx="24" cy="27" r="8"/><circle cx="24" cy="27" r="3"/>', 'smartphone': '<rect x="13" y="4" width="22" height="40" rx="4"/><path d="M20 9h8M21 38h6"/>', 'chart': '<path d="M7 41V7M7 41h35"/><rect x="13" y="25" width="6" height="12" rx="1"/><rect x="23" y="17" width="6" height="20" rx="1"/><rect x="33" y="10" width="6" height="27" rx="1"/>', 'palette': '<path d="M24 5C13 5 5 13 5 23s8 19 19 19h3a5 5 0 0 0 4-8c-1-2 0-4 3-4h2c5 0 7-4 6-9C40 12 33 5 24 5z"/><circle cx="15" cy="20" r="2"/><circle cx="23" cy="14" r="2"/><circle cx="32" cy="19" r="2"/>', 'shopping-bag': '<path d="M8 17h32l-3 26H11z"/><path d="M17 18v-5a7 7 0 0 1 14 0v5"/>', 'phone': '<path d="M15 6 9 9c-2 1-2 4-1 7 4 12 13 21 25 24 3 1 6 0 7-2l3-6-10-6-5 5c-5-2-9-6-11-11l5-5z"/>', 'mail': '<rect x="5" y="10" width="38" height="28" rx="4"/><path d="m7 14 17 13 17-13"/>', 'map-pin': '<path d="M24 43s14-14 14-25a14 14 0 1 0-28 0c0 11 14 25 14 25z"/><circle cx="24" cy="18" r="5"/>', 'facebook': '<path d="M27 43V26h7l1-8h-8v-4c0-2 1-4 4-4h5V3h-7c-8 0-11 5-11 12v3h-6v8h6v17z"/>'};
+    function iconSvg(name){
+      const path=iconPaths[name] || iconPaths['file-text'];
+      return '<svg class="line-icon" viewBox="0 0 48 48" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">'+path+'</g></svg>';
+    }
     const serviceData = {
-      nid:{icon:'🪪',title:'NID সেবা',sub:'জাতীয় পরিচয়পত্র সংক্রান্ত বিভিন্ন অনলাইন সেবায় সহায়তা করা হয়।',items:['নতুন NID আবেদন','NID তথ্য সংশোধন আবেদন','NID ঠিকানা/ব্যক্তিগত তথ্য সংশোধন সংক্রান্ত সহায়তা','NID নবায়ন/স্মার্ট কার্ড সংক্রান্ত সহায়তা','হারানো NID সংক্রান্ত আবেদন/সহায়তা','NID ডাউনলোড','NID তথ্য যাচাই ও প্রয়োজনীয় অনলাইন কাজ'],official:'https://services.nidw.gov.bd/'},
-      birth:{icon:'📜',title:'জন্ম ও মৃত্যু নিবন্ধন',sub:'জন্ম ও মৃত্যু নিবন্ধনের বিভিন্ন অনলাইন কাজ করা হয়।',items:['নতুন জন্ম নিবন্ধন আবেদন','জন্ম নিবন্ধন সংশোধন আবেদন','জন্ম নিবন্ধনের তথ্য সংশোধন','জন্ম নিবন্ধন পুনঃমুদ্রণ/ডাউনলোড সংক্রান্ত সহায়তা','জন্ম নিবন্ধন যাচাই','নতুন মৃত্যু নিবন্ধন আবেদন','মৃত্যু নিবন্ধন সংশোধন আবেদন'],official:'https://bdris.gov.bd/'},
-      education:{icon:'🎓',title:'স্কুল/কলেজ/ভর্তি সেবা',sub:'শিক্ষা প্রতিষ্ঠানের বিভিন্ন অনলাইন আবেদন ও ফলাফল সংক্রান্ত কাজ।',items:['স্কুলে ভর্তি আবেদন','কলেজে ভর্তি আবেদন','বিশ্ববিদ্যালয়/অন্যান্য ভর্তি আবেদন','ভর্তি ফরম পূরণ','ভর্তি ফলাফল দেখা','রেজাল্ট/ফলাফল চেক','অনলাইন ফি/আবেদন সংক্রান্ত প্রয়োজনীয় সহায়তা']},
-      pcc:{icon:'🛡️',title:'পুলিশ ক্লিয়ারেন্স',sub:'পুলিশ ক্লিয়ারেন্স সার্টিফিকেটের অনলাইন আবেদন সংক্রান্ত সহায়তা।',items:['নতুন পুলিশ ক্লিয়ারেন্স আবেদন','অনলাইন ফরম পূরণ','প্রয়োজনীয় তথ্য/ডকুমেন্ট প্রস্তুত','আবেদন সংক্রান্ত সহায়তা','আবেদনের অবস্থা/স্ট্যাটাস চেক','সার্টিফিকেট সংক্রান্ত প্রয়োজনীয় সহায়তা'],official:'https://pcc.police.gov.bd/'},
-      jobs:{icon:'💼',title:'সরকারি/বেসরকারি চাকরি',sub:'চাকরির অনলাইন আবেদন থেকে ফলাফল দেখা পর্যন্ত বিভিন্ন কাজ।',items:['সরকারি চাকরির অনলাইন আবেদন','বেসরকারি চাকরির অনলাইন আবেদন','চাকরির ফরম পূরণ','আবেদন ফি/পেমেন্ট সংক্রান্ত সহায়তা','Admit Card/প্রবেশপত্র ডাউনলোড','চাকরির পরীক্ষার ফলাফল দেখা','অন্যান্য অনলাইন নিয়োগ সংক্রান্ত কাজ']},
-      tin:{icon:'🧾',title:'TIN সার্টিফিকেট',sub:'e-TIN সংক্রান্ত বিভিন্ন অনলাইন সেবা।',items:['নতুন TIN/e-TIN রেজিস্ট্রেশন','TIN সার্টিফিকেট ডাউনলোড','TIN তথ্য সংশোধন সংক্রান্ত সহায়তা','TIN সংক্রান্ত অনলাইন আবেদন','প্রয়োজনীয় তথ্য/ফাইল প্রস্তুত','TIN যাচাই/সংক্রান্ত প্রয়োজনীয় সহায়তা']},
-      passport:{icon:'🛂',title:'পাসপোর্ট সেবা',sub:'e-Passport সংক্রান্ত আবেদন ও অনলাইন সহায়তা।',items:['নতুন e-Passport আবেদন','পাসপোর্ট রি-ইস্যু/রিনিউ আবেদন','পাসপোর্টের তথ্য সংশোধন সংক্রান্ত সহায়তা','অনলাইন আবেদন ফরম পূরণ','Appointment সংক্রান্ত সহায়তা','আবেদন স্ট্যাটাস চেক','প্রয়োজনীয় ডকুমেন্ট/তথ্য প্রস্তুত'],official:'https://www.epassport.gov.bd/'},
-      forms:{icon:'📄',title:'অনলাইন ফর্ম পূরণ',sub:'বিভিন্ন সরকারি ও বেসরকারি অনলাইন ফর্ম পূরণ করা হয়।',items:['সরকারি অনলাইন ফর্ম পূরণ','বেসরকারি অনলাইন ফর্ম পূরণ','ভর্তি ফর্ম পূরণ','চাকরির ফর্ম পূরণ','বিভিন্ন আবেদন ফর্ম পূরণ','অনলাইন রেজিস্ট্রেশন','প্রয়োজনীয় তথ্য ও ডকুমেন্ট আপলোডে সহায়তা']},
-      typing:{icon:'⌨️',title:'টাইপিং ও ফটো এডিটিং',sub:'ডিজিটাল টাইপিং ও ছবি এডিটিংয়ের বিভিন্ন কাজ।',items:['বাংলা টাইপিং','ইংরেজি টাইপিং','আবেদনপত্র/চিঠি টাইপ','CV/বায়োডাটা তৈরি','ছবি এডিটিং','ছবির ব্যাকগ্রাউন্ড পরিবর্তন','ডকুমেন্ট/ছবি সাজানো ও প্রস্তুত']},
-      document:{icon:'📁',title:'ছবি/ডকুমেন্ট এক্সট্রাক্ট',sub:'মোবাইল বা ডকুমেন্ট থেকে প্রয়োজনীয় ছবি, লেখা ও ফাইল প্রস্তুত করা হয়।',items:['মোবাইল থেকে ছবি/ডকুমেন্ট বের করা','ডকুমেন্ট স্ক্যান','ছবি স্ক্যান','PDF তৈরি','PDF থেকে ছবি/তথ্য বের করা','ছবি/ডকুমেন্টের প্রয়োজনীয় অংশ আলাদা করা','ফাইল রূপান্তর ও প্রস্তুত করা']},
-      photo:{icon:'📸',title:'পাসপোর্ট সাইজ ছবি',sub:'বিভিন্ন প্রয়োজন অনুযায়ী পাসপোর্ট সাইজ ছবি তৈরি করা হয়।',items:['পাসপোর্ট সাইজ ছবি তৈরি','ভিসা/আবেদন উপযোগী ছবি তৈরি','ছবির ব্যাকগ্রাউন্ড পরিবর্তন','ছবির সাইজ/ফরম্যাট ঠিক করা','একাধিক কপি ছবি প্রস্তুত','প্রয়োজন অনুযায়ী ছবি এডিট']},
-      flexi:{icon:'📱',title:'Flexiload সেবা',sub:'মোবাইল রিচার্জ ও ফ্লেক্সিলোড সেবা।',items:['সকল অপারেটরে Flexiload','মোবাইল রিচার্জ','প্রিপেইড রিচার্জ','প্রয়োজনীয় মোবাইল রিচার্জ সহায়তা']},
-      excel:{icon:'📊',title:'Excel Works',sub:'ব্যক্তিগত ও ব্যবসায়িক বিভিন্ন Excel কাজ করা হয়।',items:['Data Entry','হিসাব তৈরি','List Making','নাম/তালিকা তৈরি','Excel Sheet তৈরি ও সাজানো','ডাটা সাজানো/ফিল্টার','অন্যান্য প্রয়োজনীয় Excel কাজ']},
-      graphics:{icon:'🎨',title:'গ্রাফিক্স ডিজাইন',sub:'প্রয়োজন অনুযায়ী বিভিন্ন ডিজিটাল গ্রাফিক্স ডিজাইন করা হয়।',items:['ব্যানার ডিজাইন','পোস্টার ডিজাইন','ফেসবুক পোস্ট ডিজাইন','ভিজিটিং কার্ড ডিজাইন','লোগো ডিজাইন','ফ্লায়ার/লিফলেট ডিজাইন','অন্যান্য গ্রাফিক্স ডিজাইন'] }
+      nid:{icon:'id-card',title:'NID সেবা',sub:'জাতীয় পরিচয়পত্র সংক্রান্ত বিভিন্ন অনলাইন সেবায় সহায়তা করা হয়।',items:['নতুন NID আবেদন','NID তথ্য সংশোধন আবেদন','NID ঠিকানা/ব্যক্তিগত তথ্য সংশোধন সংক্রান্ত সহায়তা','NID নবায়ন/স্মার্ট কার্ড সংক্রান্ত সহায়তা','হারানো NID সংক্রান্ত আবেদন/সহায়তা','NID ডাউনলোড','NID তথ্য যাচাই ও প্রয়োজনীয় অনলাইন কাজ'],official:'https://services.nidw.gov.bd/'},
+      birth:{icon:'file-text',title:'জন্ম ও মৃত্যু নিবন্ধন',sub:'জন্ম ও মৃত্যু নিবন্ধনের বিভিন্ন অনলাইন কাজ করা হয়।',items:['নতুন জন্ম নিবন্ধন আবেদন','জন্ম নিবন্ধন সংশোধন আবেদন','জন্ম নিবন্ধনের তথ্য সংশোধন','জন্ম নিবন্ধন পুনঃমুদ্রণ/ডাউনলোড সংক্রান্ত সহায়তা','জন্ম নিবন্ধন যাচাই','নতুন মৃত্যু নিবন্ধন আবেদন','মৃত্যু নিবন্ধন সংশোধন আবেদন'],official:'https://bdris.gov.bd/'},
+      education:{icon:'graduation',title:'স্কুল/কলেজ/ভর্তি সেবা',sub:'শিক্ষা প্রতিষ্ঠানের বিভিন্ন অনলাইন আবেদন ও ফলাফল সংক্রান্ত কাজ।',items:['স্কুলে ভর্তি আবেদন','কলেজে ভর্তি আবেদন','বিশ্ববিদ্যালয়/অন্যান্য ভর্তি আবেদন','ভর্তি ফরম পূরণ','ভর্তি ফলাফল দেখা','রেজাল্ট/ফলাফল চেক','অনলাইন ফি/আবেদন সংক্রান্ত প্রয়োজনীয় সহায়তা']},
+      pcc:{icon:'shield',title:'পুলিশ ক্লিয়ারেন্স',sub:'পুলিশ ক্লিয়ারেন্স সার্টিফিকেটের অনলাইন আবেদন সংক্রান্ত সহায়তা।',items:['নতুন পুলিশ ক্লিয়ারেন্স আবেদন','অনলাইন ফরম পূরণ','প্রয়োজনীয় তথ্য/ডকুমেন্ট প্রস্তুত','আবেদন সংক্রান্ত সহায়তা','আবেদনের অবস্থা/স্ট্যাটাস চেক','সার্টিফিকেট সংক্রান্ত প্রয়োজনীয় সহায়তা'],official:'https://pcc.police.gov.bd/'},
+      jobs:{icon:'briefcase',title:'সরকারি/বেসরকারি চাকরি',sub:'চাকরির অনলাইন আবেদন থেকে ফলাফল দেখা পর্যন্ত বিভিন্ন কাজ।',items:['সরকারি চাকরির অনলাইন আবেদন','বেসরকারি চাকরির অনলাইন আবেদন','চাকরির ফরম পূরণ','আবেদন ফি/পেমেন্ট সংক্রান্ত সহায়তা','Admit Card/প্রবেশপত্র ডাউনলোড','চাকরির পরীক্ষার ফলাফল দেখা','অন্যান্য অনলাইন নিয়োগ সংক্রান্ত কাজ']},
+      tin:{icon:'receipt',title:'TIN সার্টিফিকেট',sub:'e-TIN সংক্রান্ত বিভিন্ন অনলাইন সেবা।',items:['নতুন TIN/e-TIN রেজিস্ট্রেশন','TIN সার্টিফিকেট ডাউনলোড','TIN তথ্য সংশোধন সংক্রান্ত সহায়তা','TIN সংক্রান্ত অনলাইন আবেদন','প্রয়োজনীয় তথ্য/ফাইল প্রস্তুত','TIN যাচাই/সংক্রান্ত প্রয়োজনীয় সহায়তা']},
+      passport:{icon:'passport',title:'পাসপোর্ট সেবা',sub:'e-Passport সংক্রান্ত আবেদন ও অনলাইন সহায়তা।',items:['নতুন e-Passport আবেদন','পাসপোর্ট রি-ইস্যু/রিনিউ আবেদন','পাসপোর্টের তথ্য সংশোধন সংক্রান্ত সহায়তা','অনলাইন আবেদন ফরম পূরণ','Appointment সংক্রান্ত সহায়তা','আবেদন স্ট্যাটাস চেক','প্রয়োজনীয় ডকুমেন্ট/তথ্য প্রস্তুত'],official:'https://www.epassport.gov.bd/'},
+      forms:{icon:'clipboard',title:'অনলাইন ফর্ম পূরণ',sub:'বিভিন্ন সরকারি ও বেসরকারি অনলাইন ফর্ম পূরণ করা হয়।',items:['সরকারি অনলাইন ফর্ম পূরণ','বেসরকারি অনলাইন ফর্ম পূরণ','ভর্তি ফর্ম পূরণ','চাকরির ফর্ম পূরণ','বিভিন্ন আবেদন ফর্ম পূরণ','অনলাইন রেজিস্ট্রেশন','প্রয়োজনীয় তথ্য ও ডকুমেন্ট আপলোডে সহায়তা']},
+      typing:{icon:'keyboard',title:'টাইপিং ও ফটো এডিটিং',sub:'ডিজিটাল টাইপিং ও ছবি এডিটিংয়ের বিভিন্ন কাজ।',items:['বাংলা টাইপিং','ইংরেজি টাইপিং','আবেদনপত্র/চিঠি টাইপ','CV/বায়োডাটা তৈরি','ছবি এডিটিং','ছবির ব্যাকগ্রাউন্ড পরিবর্তন','ডকুমেন্ট/ছবি সাজানো ও প্রস্তুত']},
+      document:{icon:'folder',title:'ছবি/ডকুমেন্ট এক্সট্রাক্ট',sub:'মোবাইল বা ডকুমেন্ট থেকে প্রয়োজনীয় ছবি, লেখা ও ফাইল প্রস্তুত করা হয়।',items:['মোবাইল থেকে ছবি/ডকুমেন্ট বের করা','ডকুমেন্ট স্ক্যান','ছবি স্ক্যান','PDF তৈরি','PDF থেকে ছবি/তথ্য বের করা','ছবি/ডকুমেন্টের প্রয়োজনীয় অংশ আলাদা করা','ফাইল রূপান্তর ও প্রস্তুত করা']},
+      photo:{icon:'camera',title:'পাসপোর্ট সাইজ ছবি',sub:'বিভিন্ন প্রয়োজন অনুযায়ী পাসপোর্ট সাইজ ছবি তৈরি করা হয়।',items:['পাসপোর্ট সাইজ ছবি তৈরি','ভিসা/আবেদন উপযোগী ছবি তৈরি','ছবির ব্যাকগ্রাউন্ড পরিবর্তন','ছবির সাইজ/ফরম্যাট ঠিক করা','একাধিক কপি ছবি প্রস্তুত','প্রয়োজন অনুযায়ী ছবি এডিট']},
+      flexi:{icon:'smartphone',title:'Flexiload সেবা',sub:'মোবাইল রিচার্জ ও ফ্লেক্সিলোড সেবা।',items:['সকল অপারেটরে Flexiload','মোবাইল রিচার্জ','প্রিপেইড রিচার্জ','প্রয়োজনীয় মোবাইল রিচার্জ সহায়তা']},
+      excel:{icon:'chart',title:'Excel Works',sub:'ব্যক্তিগত ও ব্যবসায়িক বিভিন্ন Excel কাজ করা হয়।',items:['Data Entry','হিসাব তৈরি','List Making','নাম/তালিকা তৈরি','Excel Sheet তৈরি ও সাজানো','ডাটা সাজানো/ফিল্টার','অন্যান্য প্রয়োজনীয় Excel কাজ']},
+      graphics:{icon:'palette',title:'গ্রাফিক্স ডিজাইন',sub:'প্রয়োজন অনুযায়ী বিভিন্ন ডিজিটাল গ্রাফিক্স ডিজাইন করা হয়।',items:['ব্যানার ডিজাইন','পোস্টার ডিজাইন','ফেসবুক পোস্ট ডিজাইন','ভিজিটিং কার্ড ডিজাইন','লোগো ডিজাইন','ফ্লায়ার/লিফলেট ডিজাইন','অন্যান্য গ্রাফিক্স ডিজাইন'] }
     };
+    document.querySelectorAll('svg[data-svg]').forEach(el=>{
+      const key=el.getAttribute('data-svg');
+      const path=iconPaths[key] || iconPaths['file-text'];
+      el.innerHTML='<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">'+path+'</g>';
+    });
     const modal=document.getElementById('serviceModal');
     const title=document.getElementById('modalTitle');
     const icon=document.getElementById('modalIcon');
@@ -250,7 +325,7 @@
     const close=()=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
     document.querySelectorAll('[data-service]').forEach(btn=>btn.addEventListener('click',()=>{
       const d=serviceData[btn.dataset.service]; if(!d)return;
-      icon.textContent=d.icon; title.textContent=d.title; sub.textContent=d.sub;
+      icon.innerHTML=iconSvg(d.icon); title.textContent=d.title; sub.textContent=d.sub;
       list.innerHTML=d.items.map(x=>'<li>✓ '+x+'</li>').join('');
       const msg=encodeURIComponent(d.title+' এর সেবা নিতে চাই।');
       wa.href='https://wa.me/8801815016541?text='+msg;
@@ -274,13 +349,18 @@
        const details=document.getElementById('orderDetails').value.trim();
 
        const message =
-         '🛒 নতুন অর্ডার\n\n' +
+         'নতুন অর্ডার\n\n' +
          'সেবা: ' + selectedService + '\n' +
          'নাম: ' + name + '\n' +
          'মোবাইল: ' + phone + '\n' +
          'অতিরিক্ত তথ্য: ' + (details || 'কিছু বলা হয়নি');
 
-       window.open('https://wa.me/8801815016541?text='+encodeURIComponent(message),'_blank');
+       const sendLink='https://wa.me/8801815016541?text='+encodeURIComponent(message);
+       const review=document.getElementById('orderReview');
+       const send=document.getElementById('sendPreparedOrder');
+       send.href=sendLink;
+       review.style.display='block';
+       review.scrollIntoView({behavior:'smooth',block:'nearest'});
      });
 
      orderClose.addEventListener('click',closeOrder);
